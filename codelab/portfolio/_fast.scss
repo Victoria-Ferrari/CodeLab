@@ -1,0 +1,14 @@
+@mixin margin-mobile {
+    margin: 56px 16px 16px;
+}
+@mixin margin-dekstop{
+    margin: 24px 40px;
+}
+.flex{display: flex;}
+.grid{display: grid;}
+.grey{color: $grey;}
+.none{display: none;}
+.block{display: block;}
+#red{color: $red;}
+.black{color: $diesel;}
+

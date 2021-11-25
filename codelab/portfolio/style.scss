@@ -1,0 +1,487 @@
+@import 'reset';
+@import 'colors';
+@import 'fast';
+@import 'header';
+
+
+@font-face {
+    font-family: Canela-Light;
+    src: url(/inc/dist/font/Canela/Canela-Light.otf);
+}
+@font-face {
+font-family: Object-Sans;
+src: url(/inc/dist/font/Object-Sans/ObjectSans-Light.otf);
+}
+#home-page{
+    max-height: 100vh;
+}
+main{
+    @include margin-mobile;
+}
+.footer-dekstop{display: none;}
+.menu-dekstop{display: none;}
+@mixin h1{
+    font-family: 'Canela-Light', sans-serif;
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 80px;
+    letter-spacing: 0.5px;
+}
+@mixin h1-dk{
+    font-family: 'Canela-Light', sans-serif;
+    font-size: 8rem;
+    font-weight: 300;
+    line-height: 140px;
+    letter-spacing: 0.5px;
+}
+@mixin p-dk{
+    font-family: 'Object-sans', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: $mountainmist;
+    letter-spacing: 0.4px;
+    line-height: 32.4px;
+}
+@mixin p{
+    font-family: 'Object-sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: $mountainmist;
+    letter-spacing: 0.4px;
+    line-height: 28.8px;
+}
+p{
+    @include p;
+}
+h1{@include h1; padding: 0 0 50px 0;}
+h2{
+    font-family: 'Canela-Light', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    padding: 20px 0;
+}
+.toggler span{
+    font-family: ObjectSans-Regular, sans-serif;
+    font-size: 14px;
+    font-weight: medium;
+}
+.menu span{
+    color: $red;
+}
+@mixin button {
+    padding-bottom: 25px;
+    margin-top: 60px;
+    border-bottom: 1px solid $red;
+    text-align: center;
+    span{
+        font-weight: medium;
+    }
+}
+.button{
+    @include button;
+    span{font-size:18px;}
+    &:hover{
+        color: $red;
+        border-bottom: 3px solid $red; 
+    }
+}
+
+#language a{
+    color: black;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+/* menu */
+.menuMobile, .menu-dekstop{
+    display: flex;
+    li{
+        list-style: none; 
+        padding-right: 20px;
+        // padding: 5px 0;
+        a{
+            text-decoration: none; 
+            color: #0c0b0b80; 
+            font-family: 'Object-Sans', sans-serif;
+            // font-weight: 600;
+            // font-size: 24px;
+        }
+    }
+}
+.menu-dekstop{
+    display: none;
+}
+.toggler{
+    z-index: 200;
+    span{
+        color: $red;
+    }
+}
+.toggler .close {
+    display: none;
+}
+
+.menuMobile{
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    transform: translateY(-100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+.showMenu {
+    transform: translateY(0);
+}
+/* chi sono */
+
+.chi-sono {
+    margin: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    p{
+        margin-top: 30px;
+    }
+    img{
+        width: 100%;
+    }
+}
+.carousel{
+    img{
+        width: 300px;
+        height: 220px;
+        background: green;
+      }
+}
+/* fine menu */
+footer{
+    @include margin-mobile;
+    .social{
+        display: flex;
+        align-items: center;
+        img{padding-right: 24px; 
+            width: auto; 
+            height: 24px;}
+    }
+    .footer-mobile {
+        padding: 12px 0 0;
+        span{
+            color: $red;
+        }
+    }
+}
+.good-design{display: none;}
+.dati-mobile{
+    margin: 60px 0;
+}
+.dati-dekstop{display: none;}
+.dati{
+    grid-template-columns: 1fr 3fr;
+    padding: 30px 0;
+    span{
+        padding: 10px 0;
+    }
+    .numeri, .nomi{
+        display: flex;
+        flex-direction: column;
+        span{
+            font-size: 35px;
+        }
+    }
+}
+.loghi{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 60px 0;
+}
+#img-1{
+margin-bottom: 80px;
+}
+.cta{margin-bottom: 60px;}
+
+#img img, #img-1 img{
+    width: 343px;
+    height: 252px;
+}
+.chi-griglia{
+    padding: 80px 0 0 0;
+}
+.titoli{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 80px;
+    p{font-weight: 600;}
+    span{
+        text-transform: uppercase;
+        color: red;
+        font-family: 'Object-sans', sans-serif;
+        font-weight: 600;
+        font-size: 12px;
+    }
+}
+.sinistra, .destra{
+    .button{text-align: left; width: max-content;}
+    img{
+        width: 343px;
+        height: 341px;
+    }
+}
+.premi{
+    .loghi{
+        .dandad{width: 120px; height:120px;}
+        .young-lions{width: 180px; height: auto;}
+        .awwards{width: 180px; height: auto;}
+        img{
+            margin-right: 20px;
+            margin-top: 30px;
+        }
+    }
+}
+.collabo{
+    background-color: $downpink;
+    padding: 20px 10px 50px 10px;
+    h2{
+        color: #575655;
+        font-size: 3rem;
+    }
+}
+.footer-chiSiamo{
+    h1{padding-bottom: 0;}
+}
+/* CAROSELLO */
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @include margin-mobile;
+    #carousel .item-carousel img{
+        width: 300px;
+        height: 220px;
+        background: green;
+      }
+    #wrapper {
+        width: 100%;
+        position: relative;
+      }
+      
+      #carousel {
+        overflow: auto;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+      }
+      
+      #carousel::-webkit-scrollbar {
+        height: 0;
+      }
+      
+      #prev,
+      #next {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        background: white;
+        border: none;
+        padding: 8px;
+        border-radius: 50%;
+        outline: 0;
+        cursor: pointer;
+        position: absolute;
+      }
+      
+      #prev {
+        top: 50%;
+        left: 0;
+        transform: translate(50%, -50%);
+        display: none;
+      }
+      
+      #next {
+        top: 50%;
+        right: 0;
+        transform: translate(-50%, -50%);
+      }
+      
+      #content {
+        display: grid;
+        grid-gap: 16px;
+        grid-auto-flow: column;
+        margin: auto;
+        box-sizing: border-box;
+      }
+  }
+/* dekstop */
+@media (min-width: 800px) {
+    h1{
+        @include h1-dk;
+        // padding: 130px 0;
+    }
+    p{
+        @include p-dk;
+    }
+    header, main{
+        margin: 0;
+        @include margin-dekstop;
+    }
+    .menuMobile, .toggler{display: none;}
+    main{padding: 80px 80px 0;}
+    // h1{font-size: 7.5rem; margin-bottom: 60px;}
+    h2{font-size: 30px;}
+    .cta{display: flex;
+        .button{
+            margin-right: 64px;
+        }
+    }
+    .menu-dekstop{
+        display: flex;
+        ul{
+        display: flex;
+        }
+    }
+    // .toggler, .menuMobile{display: none;}
+    footer{
+        .footer-mobile{display: none;}
+        margin: 0;
+        @include margin-dekstop;
+        display: flex;
+        .footer-dekstop{
+            display: flex;
+            p{font-size: 12px;}
+            .developer p{
+                color: $grey;
+            }
+        }
+        .footer-home{
+            position: absolute;
+            display: flex;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            @include margin-dekstop;
+        }
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+    /* chi sono */
+    .m-chi-sono{
+        margin: 24px 0px 130px 100px;
+    }
+    .chi-sono{
+        display: grid;
+        grid-template-columns: 6fr 4fr;
+        gap: 10%;
+        img{
+            width: 512px;
+        }
+        .paragrafo{
+            margin-top: 70px;
+            p{
+                margin-bottom: 30px;
+            }
+        }
+    }
+.carousel{
+    @include margin-dekstop; 
+    height: 100vh;
+    #carousel .item-carousel img{width: 512px; height: 450px;}     
+}
+      .dati-mobile{display: none;}
+      .corsi{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 20%;
+        .dati-dexstop{
+            padding-top: 340px;
+           .dati {
+               gap: 30px;
+           span{
+                font-size: 64px;
+            }}
+        }
+    }
+    .team{
+        display: flex;
+        flex-direction: column;
+        padding: 80px 0 80px;
+        #img{
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            img{
+                width: 724px;
+                height: 450px;
+            }
+        }
+        #img-1 img{
+            width: 724px;
+            height: 450px;
+        }
+    }
+    .docenze h1{padding-top: 0;}   
+    .lato{
+        width: 60%;
+    }
+    .chi-griglia{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        img{
+            width: 512px;
+            height: 341px;
+        }
+        .sinistra, .destra{
+            width: 512px;
+        }
+        .speech img{padding-bottom: 30px;}
+        
+        .c{padding-top: 300px;}
+        .b{padding: 100px 0;}
+        .d{padding: 100px 0;}
+    }
+    .premi {
+        p{
+            width: 70%;
+        }
+        h1{padding-bottom: 50px;}
+        .loghi{
+            display: flex;
+            jcsb
+            .dandad img{width: 163px; height:163px;}
+            .young-lions{width: 450px; height: auto;}
+            .awwards{width:414px; height: auto;}
+        }
+    }
+    .collabo{
+        box-shadow: 10px 10px #9A9A9A;
+        padding: 100px;
+        margin: 200px 0;
+        .cta{margin-bottom: 0;}
+        h2{ text-align: center;
+            br{display: none;}
+        }
+        p{text-align: center;}
+        .cta{justify-content: center;}
+    }
+    .footer-chiSiamo{display: none;}
+    .img-footer{
+        background: url(../img/bg.png)no-repeat center center;
+        background-size: cover;
+        .good-design{
+            display: block;
+            text-align: center;
+            h1{color: white;}
+            align-items: center;
+            padding: 80px 0;
+        }     
+    } 
+}
